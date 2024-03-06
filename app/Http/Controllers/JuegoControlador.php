@@ -72,7 +72,7 @@ class JuegoControlador extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, JuegoModelo $juegos)
+    public function update(Request $request, JuegoModelo $juego)
     {
         $request->validate([
             'Nombre_Juego' => 'required|string',
@@ -83,24 +83,24 @@ class JuegoControlador extends Controller
             'Fecha_Lanzamiento' => 'required|date',
             'Requisitos' => 'required|string',
         ]);
-        $juegos->Nombre_Juego = $request->Nombre_Juego;
-        $juegos->Desarrollador = $request->Desarrollador;
-        $juegos->Categoria = $request->Categoria;
-        $juegos->Descripcion = $request->Descripcion;
-        $juegos->Precio = $request->Precio;
-        $juegos->Fecha_Lanzamiento = $request->Fecha_Lanzamiento;
-        $juegos->Requisitos = $request->Requisitos;
-        $juegos->save();
+        $juego->Nombre_Juego = $request->Nombre_Juego;
+        $juego->Desarrollador = $request->Desarrollador;
+        $juego->Categoria = $request->Categoria;
+        $juego->Descripcion = $request->Descripcion;
+        $juego->Precio = $request->Precio;
+        $juego->Fecha_Lanzamiento = $request->Fecha_Lanzamiento;
+        $juego->Requisitos = $request->Requisitos;
+        $juego->save();
 
-        return redirect()->route('juegos.show',$juegos);
+        return redirect()->route('juegos.show',$juego);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(JuegoModelo $juegos)
+    public function destroy(JuegoModelo $juego)
     {
-        $juegos->delete();
-        return redirect()->route('juegos.index',$juegos);
+        $juego->delete();
+        return redirect()->route('juegos.index');
     }
 }
