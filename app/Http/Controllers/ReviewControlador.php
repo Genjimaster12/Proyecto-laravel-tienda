@@ -32,6 +32,7 @@ class ReviewControlador extends Controller
     public function store(Request $request)
     {
         //
+        //dd($request->all());
         $request->validate([
             'Nombre_usuario' => 'required|string',
             'Nombre_Juego' => 'required|string',
@@ -39,7 +40,7 @@ class ReviewControlador extends Controller
             'Comentario' => 'required|string',
         ]);
         $review = new ReviewModelo();
-        $review->Nombre_Usuario = $request->Nombre_Usuario;
+        $review->Nombre_usuario = $request->Nombre_usuario;
         $review->Nombre_Juego = $request->Nombre_Juego;
         $review->Puntuacion = $request->Puntuacion;
         $review->Comentario = $request->Comentario;
@@ -80,7 +81,7 @@ class ReviewControlador extends Controller
             'Comentario' => 'required|string',
         ]);
         
-        $review->Nombre_Usuario = $request->Nombre_Usuario;
+        $review->Nombre_usuario = $request->Nombre_usuario;
         $review->Nombre_Juego = $request->Nombre_Juego;
         $review->Puntuacion = $request->Puntuacion;
         $review->Comentario = $request->Comentario;
@@ -97,6 +98,6 @@ class ReviewControlador extends Controller
     {
         //
         $review->delete();
-        return redirect()->route('review');
+        return redirect()->route('reviews.index');
     }
 }
