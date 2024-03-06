@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle del Comentario</title>
+    <title>Detalle de la review</title>
 </head>
 <body>
-    <a href="{{ route('reviews.index') }}">Volver al Listado de Revisiones</a>
+    <a href="{{ route('reviews.index') }}">Volver al Listado de Reviews</a>
     <h1>Detalle de la review</h1>
 
     <ul>
